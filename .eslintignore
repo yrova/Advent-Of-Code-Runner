@@ -14,4 +14,3 @@ jest.config.js
 jest.config.ts
 *.d.ts
 # ignore the generated client files
-packages/eligibility/client

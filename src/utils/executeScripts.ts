@@ -1,9 +1,9 @@
-import path from "path";
 import * as fs from "fs";
+import {AOCFiles, createFilePathForDay} from "./fileUtils";
 
 export async function executeScript(year: string, day: string) {
-    const filePath = path.join(__dirname, "..", year, day, "runner.ts");
-    const inputFilePath = path.join(__dirname, "..", year, day, "input.txt");
+    const filePath = createFilePathForDay(year, day, AOCFiles.RUNNER);
+    const inputFilePath = createFilePathForDay(year, day, AOCFiles.INPUT);
     try {
         const dayModule = await import(filePath);
         if (dayModule && dayModule.runner) {
