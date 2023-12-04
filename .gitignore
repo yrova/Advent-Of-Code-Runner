@@ -1,0 +1,26 @@
+.idea/
+.vscode/
+node_modules/
+dist/
+.nyc_output/
+coverage/
+docker-compose.override.yml
+config/local*.json
+tabletImages/
+.stryker-tmp/
+reports/
+npm-debug.log
+xunit.xml
+packages/**/client
+packages/eligibility/db/manual/elastic-importer/logs/
+
+# Yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+yarn-error.log
+
+.env

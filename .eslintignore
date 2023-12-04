@@ -1,0 +1,17 @@
+.eslintrc.js
+dist
+.yarn
+.vscode
+*.tsbuildinfo
+*.mjs
+coverage
+.nyc_output/*
+junit_combined/*
+jest.config.js
+**/dist
+**/**/dist
+*.js
+jest.config.ts
+*.d.ts
+# ignore the generated client files
+packages/eligibility/client
