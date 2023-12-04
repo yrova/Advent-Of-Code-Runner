@@ -1,4 +1,4 @@
 // Put code here
-export function runner() {
+export function runner(input: string) {
 
 }

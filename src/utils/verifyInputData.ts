@@ -2,7 +2,6 @@
 import path from "path";
 import fetch from "node-fetch";
 import * as fs from "fs";
-import { off } from "process";
 
 export async function verifyImportForDay(
     year: string,
@@ -38,8 +37,15 @@ async function fetchInput(
         headers: { "User-Agent": "AOC Runner", cookie: `session=${sessionCookie}` },
     };
     const input = await fetch(url, options).then((res) => res.text());
+
+    // This could probably be handled better
     if (input.includes("Please don't repeatedly request this endpoint before it unlocks!")){
-        throw new Error("Input not available yet, please wait until the day unlocks.")
+        throw new Error("Error getting input. Input not available yet, please wait until the day unlocks.")
     }
+
+    if (input.includes("Puzzle inputs differ by user.  Please log in to get your puzzle input.")) {
+        throw new Error("Error getting input. Session cookie is invalid, please provide a valid session cookie.")
+    }
+
     return input;
 }

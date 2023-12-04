@@ -1,6 +1,7 @@
 import yargs from "yargs";
 import { verifyImportForDay } from "./utils/verifyInputData";
 import { executeScript } from "./utils/executeScripts";
+import { env } from "./utils/environment";
 
 export class AdventOfCodeRunner {
     private readonly day: number;
@@ -8,9 +9,9 @@ export class AdventOfCodeRunner {
     private readonly sessionCookie: string;
 
     public constructor(args: any) {
-        this.day = args.day;
-        this.year = args.year;
-        this.sessionCookie = args.sessionCookie;
+        this.day = args.day || env.DAY;
+        this.year = args.year || env.YEAR;
+        this.sessionCookie = args.sessionCookie || env.SESSION_COOKIE;
 
         console.table({
             day: this.day,
@@ -36,14 +37,11 @@ if (require.main === module) {
             alias: "d",
             describe: "The day of advent of code to run",
             type: "number",
-            requiresArg: true,
-            demandOption: true,
         })
         .option("year", {
             alias: "y",
             describe: "Year of advent of code to run",
             type: "number",
-            default: 2023,
         })
         .option("sessionCookie", {
             alias: "c",

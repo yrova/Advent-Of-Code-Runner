@@ -11,13 +11,31 @@ My personal script runner for the [Advent of Code](https://adventofcode.com/) ch
 ## Usage
 
 ### Command Line Arguments
-- `day` (alias: `-d`): Specify the day to run (range: 1-25).
-- `year` (alias: `-y`): Specify the year to run. Defaults to 2023 if not provided.
-- `sessionCookie` (alias: `-c`): Provide the session token for downloading inputs.
+- `day` : Specify the day to run (range: 1-25).
+- `year` : Specify the year to run. Defaults to 2023 if not provided.
+- `sessionCookie`: Provide the session token for downloading inputs.
+
+### ENV Variables
+ - Alternatively if you don't want to use the command line, you can set the env variables in the env. The env variables will be used if the command are not provided. Command line arguments will take precedence over env variables.
+- `DAY`: Specify the day to run (range: 1-25).
+- `YEAR`: Specify the year to run. Defaults to 2023 if not provided.
+- `SESSION_COOKIE`: Provide the session token for downloading inputs.
+
 
 ### Running the Script
 Execute the script using Yarn with the desired arguments. For example:
 
 ```bash
-yarn start -d 3 -y 2023 -c 234jdfj2i3jro3jo13j5
+yarn start -day 3 -year 2023 -sessionCookie 234jdfj2i3jro3jo13j5
 ```
+
+## Scripts in `package.json`
+
+Here's a breakdown of the scripts defined in the `package.json` file:
+
+- `start`: Runs the main script using TypeScript Node (`ts-node`). This is the primary script to execute your AOC solutions.
+- `build`: Compiles the TypeScript codebase. Useful for checking for compilation errors across the entire project.
+- `dev`: Utilizes Nodemon to watch for changes in TypeScript files and automatically restarts the `start` script.
+- `lint`: Runs ESLint to identify and report on patterns found in ECMAScript/JavaScript code, helping to ensure code quality.
+- `eslint`: Alias for running ESLint.
+- `watch`: Continuously watches your TypeScript files and compiles them whenever a change is detected, useful during development.

@@ -13,6 +13,7 @@ npm-debug.log
 xunit.xml
 packages/**/client
 packages/eligibility/db/manual/elastic-importer/logs/
+input.txt
 
 # Yarn
 .yarn/*
