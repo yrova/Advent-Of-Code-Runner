@@ -39,3 +39,27 @@ Here's a breakdown of the scripts defined in the `package.json` file:
 - `lint`: Runs ESLint to identify and report on patterns found in ECMAScript/JavaScript code, helping to ensure code quality.
 - `eslint`: Alias for running ESLint.
 - `watch`: Continuously watches your TypeScript files and compiles them whenever a change is detected, useful during development.
+
+## Directory Structure
+The Advent of Code script runner is organized into year and day-specific directories. Each year has its own folder (e.g., Y2023 for the year 2023), and within each year's folder, there are subfolders for each day (e.g., D01 for Day 1). Each day's folder contains a runner.ts script and an input.txt file. Here's a simplified layout:
+```
+AOC-Script-Runner/\
+├── src/\
+│   ├── Y2023/\
+│   │   ├── D01/\
+│   │   │   ├── runner.ts\
+│   │   │   └── input.txt\
+│   │   ├── D02/\
+│   │   │   ├── runner.ts\
+│   │   │   └── input.txt\
+│   │   ...\
+│   ├── Y2022/\
+│   │   ├── D01/\
+│   │   │   ├── runner.ts\
+│   │   │   └── input.txt\
+│   │   ├── D02/\
+│   │   │   ├── runner.ts\
+│   │   │   └── input.txt\
+│   │   ...\
+│   ...\
+```
